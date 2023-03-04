@@ -38,7 +38,7 @@ app.get('/', cors(),  function (req, res)
 mongoose.set('strictQuery', false);
 //DB connection
 mongoose.connect(
-    'mongodb+srv://uggla-gut:ComHem2011@cluster0.qrygrvo.mongodb.net/DiamondCleaning',
+    '',
     //process.env.DB_URL,
     { useNewUrlParser: true, useUnifiedTopology: true},
     () => {

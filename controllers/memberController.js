@@ -58,15 +58,14 @@ exports.deleteMember = async (req, res) => {
 }
 
 //*********************************************************** 
-// Update existing item by id
+// Update existing member by id
 
 exports.updateMember = async (req, res) => {
     try {
         res.status(201).json(await Member.updateOne(
             {'_id': req.params.memberId},
             {
-                $set: 
-                {
+                $set: {
                     name: req.body.name,
                     isCustomer: req.body.isCustomer
                 }

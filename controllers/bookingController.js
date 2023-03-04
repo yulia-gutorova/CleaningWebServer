@@ -67,12 +67,14 @@ exports.deleteBooking = async (req, res) => {
 exports.updateBooking = async (req, res) => {
     try {
         res.status(201).json(await Booking.updateOne(
+            {'_id': req.params.bookingId},
             {
                 $set: {
                     customerName: req.body.customerName,
                     cleanerName: req.body.cleanerName,
                     level: req.body.level,
                     time: req.body.time,
+                    status: req.body.status
                 }
             }
         ));

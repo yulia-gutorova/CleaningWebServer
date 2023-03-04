@@ -20,7 +20,7 @@ router.post('/', controller.createMember);
 router.delete('/:memberId', controller.deleteMember);
 
 //*********************************************************** 
-// Update existing item
+// Update existing member
 router.patch('/:memberId', controller.updateMember);
 
 module.exports = router;

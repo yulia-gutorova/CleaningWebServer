@@ -9,7 +9,7 @@ router.get('/', cors(),  controller.getAllBookings);
 
 //*********************************************************** 
 // Get a specific booking by id
-router.get('/:bokingId', controller.getBookingById);
+router.get('/:bookingId', controller.getBookingById);
 
 //*********************************************************** 
 // Create a new booking
@@ -17,10 +17,10 @@ router.post('/', controller.createBooking);
 
 //*********************************************************** 
 // Delete a specific booking
-router.delete('/:bokingId', controller.deleteBooking);
+router.delete('/:bookingId', controller.deleteBooking);
 
 //*********************************************************** 
 // Update existing booking
-router.patch('/:bokingId', controller.updateBooking);
+router.patch('/:bookingId', controller.updateBooking);
 
 module.exports = router;
