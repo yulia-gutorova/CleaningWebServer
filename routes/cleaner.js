@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors')
-const controller = require('../controllers/cleaner.controller');
+const controller = require('../controllers/cleanerController');
 
 //*********************************************************** 
 // Return all cleaners

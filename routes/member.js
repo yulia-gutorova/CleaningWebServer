@@ -1,26 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors')
-const controller = require('../controllers/customerController');
+const controller = require('../controllers/memberController');
 
 //*********************************************************** 
-// Return all customers
-router.get('/', controller.getAllCustomers);
+// Return all members
+router.get('/', controller.getAllMembers);
 
 //*********************************************************** 
-// Get a specific customer
-router.get('/:customerId', controller.getCustomerById);
+// Get a specific member
+router.get('/:memberId', controller.getMemberById);
 
 //*********************************************************** 
-// Create a new custome
-router.post('/', controller.createCustomer);
+// Create a new member
+router.post('/', controller.createMember);
 
 //*********************************************************** 
-// Delete a customer
-router.delete('/:customerId', controller.deleteCustomer);
+// Delete a member
+router.delete('/:memberId', controller.deleteMember);
 
 //*********************************************************** 
 // Update existing item
-router.patch('/:customerId', controller.updateCustomer);
+router.patch('/:memberId', controller.updateMember);
 
 module.exports = router;

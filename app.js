@@ -23,8 +23,8 @@ app.use('/bookings', bookingRouter);
 const cleanerRouter = require('./routes/cleaner');
 app.use('/cleaners', cleanerRouter);
 
-const customerRouter = require('./routes/customer');
-app.use('/customers', customerRouter);
+const memberRouter = require('./routes/member');
+app.use('/members', memberRouter);
 
 //*********************************************************** 
 // Base URL
@@ -38,7 +38,8 @@ app.get('/', cors(),  function (req, res)
 mongoose.set('strictQuery', false);
 //DB connection
 mongoose.connect(
-    process.env.DB_URL,
+    'mongodb+srv://uggla-gut:ComHem2011@cluster0.qrygrvo.mongodb.net/DiamondCleaning',
+    //process.env.DB_URL,
     { useNewUrlParser: true, useUnifiedTopology: true},
     () => {
         console.log(`***********************************`);

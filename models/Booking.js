@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 //var uuid = require('node-uuid');
 
 const BookingsSchema = mongoose.Schema({ 
-    id: { type: String, default: function genUUID() {
+/*     id: { type: String, default: function genUUID() {
          return uuid.v1()
-    }},  
+    }},   */
                 
     customerName: {
         type: String,
@@ -18,7 +18,7 @@ const BookingsSchema = mongoose.Schema({
 
     level: {
         type: String,
-        enum: ['Basic', 'Topp', 'Diamant', 'Windows'],
+        enum: ['Basic', 'Top', 'Diamond', 'Windows'],
         required: true,
         default: 'Basic'
     },
@@ -36,7 +36,7 @@ const BookingsSchema = mongoose.Schema({
 
     status: {
         type: Boolean,
-        required: false
+        default: false
     },
 
 }, { versionKey: false })
