@@ -37,11 +37,12 @@ exports.getBookingById = async (req, res) => {
 exports.createBooking = async (req, res) => { 
     try {
         const booking = new Booking({
-            id:req.body.id,
             customerName: req.body.customerName,
             cleanerName: req.body.cleanerName,
             level: req.body.level,
             time: req.body.time,
+            status: req.body.status,
+            date: req.body.date
         })
 
         res.status(201).json(await booking.save());
@@ -57,7 +58,7 @@ exports.deleteBooking = async (req, res) => {
     try {
         res.status(200).json(await Booking.deleteOne({'_id': req.params.bookingId}));
     } catch (error) {
-        res.staus(500).json({message: error});
+        res.status(500).json({message: error});
     }
 }
 
@@ -74,7 +75,8 @@ exports.updateBooking = async (req, res) => {
                     cleanerName: req.body.cleanerName,
                     level: req.body.level,
                     time: req.body.time,
-                    status: req.body.status
+                    status: req.body.status,
+                    date: req.body.date
                 }
             }
         ));

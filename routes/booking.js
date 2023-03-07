@@ -13,7 +13,7 @@ router.get('/:bookingId', controller.getBookingById);
 
 //*********************************************************** 
 // Create a new booking
-router.post('/', controller.createBooking);
+router.post('/', cors(), controller.createBooking);
 
 //*********************************************************** 
 // Delete a specific booking

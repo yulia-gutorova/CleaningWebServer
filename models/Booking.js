@@ -20,13 +20,11 @@ const BookingsSchema = mongoose.Schema({
         type: String,
         enum: ['Basic', 'Top', 'Diamond', 'Windows'],
         required: true,
-        default: 'Basic'
     },
 
     date: {
         type: Date,
-        default:Date.now,
-        //required: true
+        required: true
     },
 
     time: {
@@ -36,7 +34,7 @@ const BookingsSchema = mongoose.Schema({
 
     status: {
         type: Boolean,
-        default: false
+        required: true
     },
 
 }, { versionKey: false })

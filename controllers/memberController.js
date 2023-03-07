@@ -23,7 +23,7 @@ exports.getAllMembers = async (req, res) => {
 
 exports.getMemberById = async (req, res) => {
     try {
-        const member = await Member.findById({'id': req.params.memberId});
+        const member = await Member.findById({'_id': req.params.memberId});
             res.status(200).json(member);             
     } catch (error) {
         res.status(404).json({message: error});
@@ -51,7 +51,7 @@ exports.createMember = async (req, res) => {
 
 exports.deleteMember = async (req, res) => {
     try {
-        res.status(200).json(await Member.deleteOne({'id': req.params.memberId}));
+        res.status(200).json(await Member.deleteOne({'_id': req.params.memberId}));
     } catch (error) {
         res.staus(500).json({message: error});
     }
